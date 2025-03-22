@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gift Registry</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: rgb(250, 145, 224);
+            color: rgb(255, 255, 255);
+        }
+
+        p {
+            min-width: 360px;
+            max-width: 600px;
+            margin: auto;
+            text-align: center;
+        }
+
+       a {
+            color: white;
+            text-decoration: none;
+        }
+
+        a:visited {
+            color: rgb(255, 255, 255);
+        }
+
+        a:hover {
+            color: rgb(0, 0, 0);
+            text-decoration: underline;
+        }
+
+        button {
+            border-radius: 5px;
+            border: none;
+            padding: 5px 10px;
+            cursor: pointer;
+        }
+
+        .gift-list {
+            max-width: 400px;
+            margin: auto;
+            text-align: left;
+            padding: 0;
+        }
+
+        .gift-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 8px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .gift-name {
+            color: blue;
+            cursor: pointer;
+        }
+
+        .gift-name:hover {
+            text-decoration: underline;
+        }
+
+        /* ✅ Strikethrough when purchased */
+        .purchased .gift-name {
+            text-decoration: line-through;
+            color: gray !important;
+        }
+
+        /* ✅ Responsive Media Queries for iOS & Android */
+        @media only screen and (max-width: 480px) {
+            .gift-list {
+                max-width: 90%;
+            }
+            .gift-item {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            .gift-item button {
+                width: 100%;
+                margin-top: 5px;
+            }
+        }
+
+        @media only screen and (min-width: 768px) {
+            .gift-list {
+                max-width: 75%;
+            }
+            .gift-item {
+                font-size: 16px;
+            }
+        }
+
+        @media only screen and (min-width: 1024px) {
+            .gift-list {
+                max-width: 60%;
+            }
+            .gift-item {
+                font-size: 18px;
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>Tia's Gift Registry</h1>
+    </header>
+
+    <p>Hello All,<br><br>
+        Should you wish to gift me something for my 21st Birthday, a monetary gift would be greatly appreciated.
+        Alternatively, you may choose an item from this gift registry.<br><br>
+        The items listed below do not need to be bought from the specified websites—they are simply suggestions to guide you.
+    </p>
+
+    <p>
+        <strong>Clothing & Shoe Sizes:</strong><br>
+        👟 Shoe Size – 5 <br>
+        👗 Clothing Size – XS/S
+    </p>
+
+    <p><strong>Gift Registry Rules:</strong></p>
+    <ul style="text-align: left; margin: auto; max-width: 400px;">
+        <li>✅ Mark your gift as "Purchased" once you've secured it.</li>
+        <li>✅ Undo a purchase if you change your mind.</li>
+        <li>✅ Click on an item to view details or purchase it from a suggested site.</li>
+        <li>✅ Gifts are first-come, first-served, so be sure to claim yours early!</li>
+    </ul>
+
+    <p>Thank you for your kindness and generosity. I appreciate each and every one of you!</p>
+    <p>Much Love, ❤️<br>Tia</p>
+
+    <ul id="giftList" class="gift-list"></ul>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="script.js"></script>
+
+</body>
+</html>
