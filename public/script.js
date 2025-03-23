@@ -1,4 +1,5 @@
-const socket = io();
+const socket = io("https://gift-registry.onrender.com"); // ✅ Use Render URL
+
 
 // Render the list of gifts
 function renderGifts(gifts) {
