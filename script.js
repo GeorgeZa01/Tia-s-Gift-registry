@@ -1,4 +1,4 @@
-const socket = io("https://gift-registry.onrender.com"); // ✅ Use Render URL
+const socket = io("https://tia-s-gift-registry.onrender.com"); // ✅ Use Render URL
 
 
 // Render the list of gifts
