@@ -9,7 +9,8 @@ const io = new Server(server);
 
 const GIFT_FILE = "gifts.json";
 
-app.use(express.static("public"));
+app.use(express.static("public"));  
+
 
 // Load gifts from JSON
 function loadGifts() {
