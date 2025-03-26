@@ -20,7 +20,7 @@
             text-align: center;
         }
 
-        a {
+       a {
             color: white;
             text-decoration: none;
         }
@@ -76,12 +76,10 @@
             .gift-list {
                 max-width: 90%;
             }
-
             .gift-item {
                 flex-direction: column;
                 align-items: flex-start;
             }
-
             .gift-item button {
                 width: 100%;
                 margin-top: 5px;
@@ -92,7 +90,6 @@
             .gift-list {
                 max-width: 75%;
             }
-
             .gift-item {
                 font-size: 16px;
             }
@@ -102,11 +99,11 @@
             .gift-list {
                 max-width: 60%;
             }
-
             .gift-item {
                 font-size: 18px;
             }
         }
+
     </style>
 </head>
 
@@ -119,8 +116,7 @@
     <p>Hello All,<br><br>
         Should you wish to gift me something for my 21st Birthday, a monetary gift would be greatly appreciated.
         Alternatively, you may choose an item from this gift registry.<br><br>
-        The items listed below do not need to be bought from the specified websites—they are simply suggestions to guide
-        you.
+        The items listed below do not need to be bought from the specified websites—they are simply suggestions to guide you.
     </p>
 
     <p>
@@ -142,10 +138,8 @@
 
     <ul id="giftList" class="gift-list"></ul>
 
-    <script src="https://tia-s-gift-registry.onrender.com/socket.io/socket.io.js"></script>
-    <script src="script.js"></script>
-
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="./script.js"></script>
 
 </body>
-
 </html>
