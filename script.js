@@ -1,4 +1,4 @@
-const socket = io(); // Automatically connects to the same host
+const socket = io("https://tia-gift-registry.onrender.com"); // Automatically connects to the same host
 
 // Render gift list
 function renderGifts(gifts) {
