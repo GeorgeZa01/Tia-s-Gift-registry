@@ -62,7 +62,13 @@ io.on("connection", (socket) => {
     });
 });
 
-const PORT = 3000;
-server.listen(PORT, () => {
-    console.log(`Server running at http://localhost:${PORT}`);
+app.get("/socket.io/socket.io.js", (req, res) => {
+    res.sendFile(require.resolve("socket.io/client-dist/socket.io.js"));
 });
+
+
+const PORT = process.env.PORT || 3000; // Use environment port on Render
+server.listen(PORT, () => {
+    console.log(`Server running at port ${PORT}`);
+});
+
