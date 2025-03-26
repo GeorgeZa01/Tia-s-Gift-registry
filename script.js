@@ -1,10 +1,10 @@
-const socket = io("https://tia-s-gift-registry.onrender.com"); // ✅ Use Render URL
+const socket = io(); // Automatically connects to the same host
 
-
-// Render the list of gifts
+// Render gift list
 function renderGifts(gifts) {
     const giftList = document.getElementById("giftList");
     giftList.innerHTML = "";
+    
     gifts.forEach((gift) => {
         const li = document.createElement("li");
         li.classList.add("gift-item");
