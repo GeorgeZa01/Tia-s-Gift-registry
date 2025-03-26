@@ -2,15 +2,26 @@ const express = require("express");
 const http = require("http");
 const fs = require("fs");
 const { Server } = require("socket.io");
+const cors = require("cors");
 
 const app = express();
 const server = http.createServer(app);
-const io = new Server(server);
+const io = new Server(server, {
+    cors: {
+        origin: "*", // Allow all origins (or specify your frontend URL)
+        methods: ["GET", "POST"]
+    }
+});
 
 const GIFT_FILE = "gifts.json";
 
+app.use(cors());
 app.use(express.static("public"));  
 
+// Default route for testing
+app.get("/", (req, res) => {
+    res.send("Tia's Gift Registry Backend is Running!");
+});
 
 // Load gifts from JSON
 function loadGifts() {
@@ -62,13 +73,8 @@ io.on("connection", (socket) => {
     });
 });
 
-app.get("/socket.io/socket.io.js", (req, res) => {
-    res.sendFile(require.resolve("socket.io/client-dist/socket.io.js"));
-});
-
-
-const PORT = process.env.PORT || 3000; // Use environment port on Render
+// **Use Render's PORT (important!)**
+const PORT = process.env.PORT || 3000;
 server.listen(PORT, () => {
-    console.log(`Server running at port ${PORT}`);
+    console.log(`Server running at http://localhost:${PORT}`);
 });
-
